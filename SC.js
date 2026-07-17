@@ -1,19 +1,11 @@
 (function() {
-    var devtools = /./;
-    devtools.toString = function() {
-        this.opened = true;
-    };
-    
+    var threshold = 160;
     setInterval(function() {
-        var before = new Date().getTime();
-        debugger;
-        var after = new Date().getTime();
-        if (after - before > 100) {
-            document.body.innerHTML = "Access Denied!";
+        if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+            window.location.reload();
         }
     }, 1000);
 })();
-
 (function () {
 
     document.querySelectorAll('link[rel="stylesheet"]').forEach(e => e.remove());
