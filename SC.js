@@ -10,31 +10,31 @@
 })();
 
 
-(function () {
+// (function () {
 
-    document.querySelectorAll('link[rel="stylesheet"]').forEach(e => e.remove());
+//     document.querySelectorAll('link[rel="stylesheet"]').forEach(e => e.remove());
 
-    document.querySelectorAll("style").forEach(e => e.remove());
-    document.querySelectorAll("*").forEach(el => {
-        el.removeAttribute("style");
-        el.removeAttribute("class");
-        el.removeAttribute("id");
-    });
-    new MutationObserver(mutations => {
-        mutations.forEach(m => {
-            m.addedNodes.forEach(node => {
-                if (
-                    node.tagName === "STYLE" ||
-                    (node.tagName === "LINK" && node.rel === "stylesheet")
-                ) {
-                    node.remove();
-                }
-            });
-        });
-    }).observe(document.documentElement, {
-        childList: true,
-        subtree: true
-    });
+//     document.querySelectorAll("style").forEach(e => e.remove());
+//     document.querySelectorAll("*").forEach(el => {
+//         el.removeAttribute("style");
+//         el.removeAttribute("class");
+//         el.removeAttribute("id");
+//     });
+//     new MutationObserver(mutations => {
+//         mutations.forEach(m => {
+//             m.addedNodes.forEach(node => {
+//                 if (
+//                     node.tagName === "STYLE" ||
+//                     (node.tagName === "LINK" && node.rel === "stylesheet")
+//                 ) {
+//                     node.remove();
+//                 }
+//             });
+//         });
+//     }).observe(document.documentElement, {
+//         childList: true,
+//         subtree: true
+//     });
 
-})();
- console.log("Clear");
+// })();
+ // console.log("Clear");
